@@ -1,1 +1,6 @@
+com\library\repository\LivreRepository.class
+com\library\model\Livre.class
 com\library\controller\RootController.class
+com\library\service\LivreService.class
+com\library\controller\LivreController.class
+com\library\model\Exemplaire.class

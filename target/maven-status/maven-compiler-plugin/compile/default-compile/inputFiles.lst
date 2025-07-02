@@ -1,1 +1,6 @@
+D:\L2\spring\bibliotheque\src\main\java\com\library\controller\LivreController.java
 D:\L2\spring\bibliotheque\src\main\java\com\library\controller\RootController.java
+D:\L2\spring\bibliotheque\src\main\java\com\library\model\Exemplaire.java
+D:\L2\spring\bibliotheque\src\main\java\com\library\model\Livre.java
+D:\L2\spring\bibliotheque\src\main\java\com\library\repository\LivreRepository.java
+D:\L2\spring\bibliotheque\src\main\java\com\library\service\LivreService.java
