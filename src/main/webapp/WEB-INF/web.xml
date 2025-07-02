@@ -1,4 +1,7 @@
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+<web-app xmlns="http://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://jakarta.ee/xml/ns/jakartaee
+                             http://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
     <display-name>Spring MVC Bibliotheque</display-name>
