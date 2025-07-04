@@ -1,44 +1,62 @@
 package com.library.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "livre")
+@Table(
+   name = "livre"
+)
 public class Livre {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_livre")
-    private int idLivre;
+   @Id
+   @GeneratedValue(
+      strategy = GenerationType.IDENTITY
+   )
+   @Column(
+      name = "id_livre"
+   )
+   private int idLivre;
+   @Column(
+      name = "nbpage"
+   )
+   private int nbPage;
+   @ManyToOne
+   @JoinColumn(
+      name = "id_exemplaire",
+      nullable = false
+   )
+   private Exemplaire exemplaire;
 
-    @Column(name = "nbpage")
-    private int nbPage;
+   public Livre() {
+   }
 
-    @ManyToOne
-    @JoinColumn(name = "id_exemplaire", nullable = false)
-    private Exemplaire exemplaire;
+   public int getIdLivre() {
+      return this.idLivre;
+   }
 
-    // Getters and Setters
-    public int getIdLivre() {
-        return idLivre;
-    }
+   public void setIdLivre(int idLivre) {
+      this.idLivre = idLivre;
+   }
 
-    public void setIdLivre(int idLivre) {
-        this.idLivre = idLivre;
-    }
+   public int getNbPage() {
+      return this.nbPage;
+   }
 
-    public int getNbPage() {
-        return nbPage;
-    }
+   public void setNbPage(int nbPage) {
+      this.nbPage = nbPage;
+   }
 
-    public void setNbPage(int nbPage) {
-        this.nbPage = nbPage;
-    }
+   public Exemplaire getExemplaire() {
+      return this.exemplaire;
+   }
 
-    public Exemplaire getExemplaire() {
-        return exemplaire;
-    }
-
-    public void setExemplaire(Exemplaire exemplaire) {
-        this.exemplaire = exemplaire;
-    }
+   public void setExemplaire(Exemplaire exemplaire) {
+      this.exemplaire = exemplaire;
+   }
 }

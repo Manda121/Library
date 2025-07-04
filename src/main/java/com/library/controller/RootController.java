@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class RootController {
+   public RootController() {
+   }
 
-    @GetMapping("/")
-    public String home() {
-        return "index"; // va chercher /views/index.jsp
-    }
+   @GetMapping({"/"})
+   public String home() {
+      return "index";
+   }
 }
