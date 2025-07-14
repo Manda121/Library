@@ -20,7 +20,13 @@ public class AdherentStatusController {
    @GetMapping({"/adherent-status-update"})
    public String showStatusUpdatePage(HttpSession session, Model model) {
       Object user = session.getAttribute("user");
-      return !(user instanceof Bibliothecaire) ? "redirect:/login" : "adherent-status-update";
+      if (!(user instanceof Bibliothecaire)) {
+         return "redirect:/login";
+      } else {
+         String result = this.userService.updateAllAdherentStatuses();
+         model.addAttribute("message", result);
+         return "redirect:/exemplaires";
+      }
    }
 
    @PostMapping({"/adherent-status-update"})
@@ -31,7 +37,7 @@ public class AdherentStatusController {
       } else {
          String result = this.userService.updateAllAdherentStatuses();
          model.addAttribute("message", result);
-         return "adherent-status-update";
+         return "redirect:/exemplaires";
       }
    }
 }

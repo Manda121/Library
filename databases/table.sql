@@ -163,3 +163,6 @@ CREATE TABLE pret_rendu(
    PRIMARY KEY(id_pret_rendu),
    FOREIGN KEY(id_pret_1) REFERENCES pret(id_pret)
 );
+
+ALTER TABLE abonnement
+MODIFY date_abonnement DATE DEFAULT CURRENT_DATE;

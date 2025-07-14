@@ -3,35 +3,73 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-    <title>Demande de Prolongement</title>
+    <title>Liste des Adhérents Pénalisés - Bibliothèque</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/css/styles.css">
+    <script src="/resources/js/scripts.js"></script>
 </head>
-<body>
-    <h2>Demande de Prolongement</h2>
 
-    <c:if test="${not empty message}">
-        <c:choose>
-            <c:when test="${fn:contains(message, 'succès')}">
-                <p style="color: green;">${message}</p>
-            </c:when>
-            <c:otherwise>
-                <p style="color: red;">${message}</p>
-            </c:otherwise>
-        </c:choose>
-    </c:if>
-    <form action="prolongement" method="post">
-        <label>Prêt:
-            <select name="pretId" required>
-                <option value="">Sélectionner un prêt</option>
-                <c:forEach var="pret" items="${prets}">
-                    <option value="${pret.idPret}">${pret.exemplaire.titre} (Remise: ${pret.dateRemise})</option>
-                </c:forEach>
-            </select>
-        </label><br>
-        <label>Nombre de jours de prolongement:
-            <input type="number" name="nbJourProlongement" min="1" required>
-        </label><br>
-        <input type="submit" value="Demander Prolongement">
-    </form>
-    <a href="exemplaires">Retour</a>
+<body>
+    <jsp:include page="sidebar.jsp" />
+    <div class="container">
+        <jsp:include page="header.jsp" />
+        <h2>Demande de Prolongement</h2>
+        <c:if test="${not empty message}">
+            <c:choose>
+                <c:when test="${fn:contains(message, 'succès')}">
+                    <p class="message-success">${message}</p>
+                </c:when>
+                <c:otherwise>
+                    <p class="message-error">${message}</p>
+                </c:otherwise>
+            </c:choose>
+        </c:if>
+        <form action="prolongement" method="post" class="form">
+            <label class="form-label">
+                Prêt:
+                <select name="pretId" required class="form-select">
+                    <option value="">Sélectionner un prêt</option>
+                    <c:forEach var="pret" items="${prets}">
+                        <option value="${pret.idPret}">${pret.exemplaire.titre} (Remise: ${pret.dateRemise})</option>
+                    </c:forEach>
+                </select>
+            </label>
+            <label class="form-label">
+                Nombre de jours de prolongement:
+                <input type="number" name="nbJourProlongement" min="1" required class="form-input">
+            </label>
+            <input type="submit" value="Demander Prolongement" class="action-button">
+        </form>
+        <a href="exemplaires" class="return-link">Retour</a>
+    </div>
+    <script>
+// Afficher/masquer la sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}
+
+// Filtrer le tableau
+function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector('table');
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let match = false;
+        for (let j = 0; j < cells.length; j++) {
+            if (cells[j].textContent.toLowerCase().includes(filter)) {
+                match = true;
+                break;
+            }
+        }
+        rows[i].style.display = match ? '' : 'none';
+    }
+}
+    </script>
 </body>
 </html>
