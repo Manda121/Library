@@ -1,6 +1,6 @@
 package com.library.controller;
 
-import com.library.model.Exemplaire;
+import com.library.dto.ExemplaireDetailDto;
 import com.library.service.ExemplaireService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -18,9 +18,13 @@ public class ExemplaireRestController {
     private ExemplaireService exemplaireService;
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Exemplaire> getExemplaireById(@PathVariable("id") Integer id) {
-        return exemplaireService.getExemplaireById(id)
-                .map(exemplaire -> ResponseEntity.ok(exemplaire))
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<ExemplaireDetailDto> getExemplaireById(@PathVariable("id") Integer id) {
+        ExemplaireDetailDto exemplaireDetail = exemplaireService.getExemplaireWithDetails(id);
+        
+        if (exemplaireDetail != null) {
+            return ResponseEntity.ok(exemplaireDetail);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

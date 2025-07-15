@@ -8,6 +8,7 @@ com/library/controller/PretController.class
 com/library/service/ExemplaireService.class
 com/library/controller/ReservationController.class
 com/library/repository/TypeLectureRepository.class
+com/library/dto/LivreDto.class
 com/library/controller/PenaltyController.class
 com/library/controller/ExemplaireRestController.class
 com/library/controller/LivreController.class
@@ -38,6 +39,7 @@ com/library/service/UserService.class
 com/library/model/Statut.class
 com/library/service/PenaltyService.class
 com/library/model/TypeProfil.class
+com/library/dto/ExemplaireDetailDto.class
 com/library/model/Bibliothecaire.class
 com/library/model/Prolongement.class
 com/library/service/ReservationService.class

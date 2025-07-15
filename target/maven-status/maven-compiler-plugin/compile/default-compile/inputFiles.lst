@@ -10,6 +10,8 @@
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/ProlongementDecisionController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/ReservationController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/RootController.java
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/dto/ExemplaireDetailDto.java
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/dto/LivreDto.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/model/Abonnement.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/model/Adherent.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/model/Bibliothecaire.java
