@@ -9,6 +9,7 @@ com/library/service/ExemplaireService.class
 com/library/controller/ReservationController.class
 com/library/repository/TypeLectureRepository.class
 com/library/controller/PenaltyController.class
+com/library/controller/ExemplaireRestController.class
 com/library/controller/LivreController.class
 com/library/controller/LoginController.class
 com/library/model/Reservation.class

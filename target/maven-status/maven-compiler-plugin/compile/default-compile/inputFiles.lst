@@ -1,5 +1,6 @@
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/AdherentStatusController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/ExemplaireController.java
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/ExemplaireRestController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/LivreController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/LoginController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/PenaltyController.java

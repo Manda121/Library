@@ -9,6 +9,8 @@ import com.library.repository.LivreRepository;
 import com.library.repository.PretRepository;
 import com.library.repository.ReservationRepository;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +32,10 @@ public class ExemplaireService {
    public List<Exemplaire> getAllExemplaires() {
       return this.exemplaireRepository.findAll();
    }
+
+   public Optional<Exemplaire> getExemplaireById(Integer id) {
+        return exemplaireRepository.findById(id);
+    }
 
    public List<Livre> getAllLivres() {
       return this.livreRepository.findAll();
