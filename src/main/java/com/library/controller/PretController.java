@@ -32,16 +32,30 @@ public class PretController {
    }
 
    @PostMapping({"/pret"})
-   public String processPret(@RequestParam("exemplaireId") int exemplaireId, @RequestParam("adherentId") int adherentId, @RequestParam("dateRemise") String dateRemise, HttpSession session, Model model) {
+   public String processPret(@RequestParam("exemplaireId") int exemplaireId, @RequestParam("adherentId") int adherentId, @RequestParam("datePret") String datePret, @RequestParam("dateRemise") String dateRemise, HttpSession session, Model model) {
       Object user = session.getAttribute("user");
       if (!(user instanceof Bibliothecaire)) {
          return "redirect:/login";
       } else {
-         String result = this.userService.processLoan(exemplaireId, adherentId, LocalDate.parse(dateRemise));
+         String result = this.userService.processLoan(exemplaireId, adherentId, LocalDate.parse(datePret), LocalDate.parse(dateRemise));
          model.addAttribute("message", result);
          model.addAttribute("exemplaires", this.userService.getAllExemplaires());
          model.addAttribute("adherents", this.userService.getAllAdherents());
          return "pret";
       }
    }
+
+   // @PostMapping({"/pret"})
+   // public String processPret(@RequestParam("exemplaireId") int exemplaireId, @RequestParam("adherentId") int adherentId, @RequestParam("dateRemise") String dateRemise, HttpSession session, Model model) {
+   //    Object user = session.getAttribute("user");
+   //    if (!(user instanceof Bibliothecaire)) {
+   //       return "redirect:/login";
+   //    } else {
+   //       String result = this.userService.processLoan(exemplaireId, adherentId, LocalDate.parse(dateRemise));
+   //       model.addAttribute("message", result);
+   //       model.addAttribute("exemplaires", this.userService.getAllExemplaires());
+   //       model.addAttribute("adherents", this.userService.getAllAdherents());
+   //       return "pret";
+   //    }
+   // }
 }

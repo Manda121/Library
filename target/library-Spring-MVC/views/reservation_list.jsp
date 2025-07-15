@@ -3,50 +3,86 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-    <title>Liste des Réservations en Attente</title>
+    <title>Liste des Adhérents Pénalisés - Bibliothèque</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/css/styles.css">
+    <script src="/resources/js/scripts.js"></script>
 </head>
+
 <body>
-    <h2>Liste des Réservations en Attente</h2>
-    
-    <c:if test="${not empty message}">
-        <c:choose>
-            <c:when test="${fn:contains(message, 'succès')}">
-                <p style="color: green;">${message}</p>
-            </c:when>
-            <c:otherwise>
-                <p style="color: red;">${message}</p>
-            </c:otherwise>
-        </c:choose>
-    </c:if>
-    <table border="1">
-        <tr>
-            <th>ID Réservation</th>
-            <th>Adhérent</th>
-            <th>Exemplaire</th>
-            <th>Date de Prêt Souhaitée</th>
-            <th>Actions</th>
-        </tr>
-        <c:forEach var="reservation" items="${reservations}">
+    <jsp:include page="sidebar.jsp" />
+    <div class="container">
+        <jsp:include page="header.jsp" />
+        <h2>Liste des Réservations en Attente</h2>
+        <c:if test="${not empty message}">
+            <c:choose>
+                <c:when test="${fn:contains(message, 'succès')}">
+                    <p class="message-success">${message}</p>
+                </c:when>
+                <c:otherwise>
+                    <p class="message-error">${message}</p>
+                </c:otherwise>
+            </c:choose>
+        </c:if>
+        <table>
             <tr>
-                <td>${reservation.idReservation}</td>
-                <td>${reservation.adherent.nom} ${reservation.adherent.prenom}</td>
-                <td>${reservation.exemplaire.titre}</td>
-                <td>${reservation.datePret}</td>
-                <td>
-                    <form action="reservation-action" method="post" style="display:inline;">
-                        <input type="hidden" name="reservationId" value="${reservation.idReservation}">
-                        <input type="hidden" name="action" value="accept">
-                        <input type="submit" value="Accepter">
-                    </form>
-                    <form action="reservation-action" method="post" style="display:inline;">
-                        <input type="hidden" name="reservationId" value="${reservation.idReservation}">
-                        <input type="hidden" name="action" value="reject">
-                        <input type="submit" value="Refuser">
-                    </form>
-                </td>
+                <th>ID Réservation</th>
+                <th>Adhérent</th>
+                <th>Exemplaire</th>
+                <th>Date de Prêt Souhaitée</th>
+                <th>Actions</th>
             </tr>
-        </c:forEach>
-    </table>
-    <a href="exemplaires">Retour</a>
+            <c:forEach var="reservation" items="${reservations}">
+                <tr>
+                    <td>${reservation.idReservation}</td>
+                    <td>${reservation.adherent.nom} ${reservation.adherent.prenom}</td>
+                    <td>${reservation.exemplaire.titre}</td>
+                    <td>${reservation.datePret}</td>
+                    <td>
+                        <form action="reservation-action" method="post" class="inline-form">
+                            <input type="hidden" name="reservationId" value="${reservation.idReservation}">
+                            <input type="hidden" name="action" value="accept">
+                            <input type="submit" value="Accepter" class="action-button">
+                        </form>
+                        <form action="reservation-action" method="post" class="inline-form">
+                            <input type="hidden" name="reservationId" value="${reservation.idReservation}">
+                            <input type="hidden" name="action" value="reject">
+                            <input type="submit" value="Refuser" class="action-button">
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+        <a href="exemplaires" class="return-link">Retour</a>
+    </div>
+    <script>
+// Afficher/masquer la sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}
+
+// Filtrer le tableau
+function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector('table');
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let match = false;
+        for (let j = 0; j < cells.length; j++) {
+            if (cells[j].textContent.toLowerCase().includes(filter)) {
+                match = true;
+                break;
+            }
+        }
+        rows[i].style.display = match ? '' : 'none';
+    }
+}
+    </script>
 </body>
 </html>
