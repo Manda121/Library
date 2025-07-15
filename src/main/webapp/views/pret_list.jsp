@@ -44,6 +44,7 @@
                     <td>${pret.dateRemise}</td>
                     <td>
                         <form action="pret-return" method="post" class="inline-form">
+                            <input type="date" name="dateReel">
                             <input type="hidden" name="pretId" value="${pret.idPret}">
                             <input type="submit" value="Rendre" class="action-button">
                         </form>

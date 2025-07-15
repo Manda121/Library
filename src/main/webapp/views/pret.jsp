@@ -46,6 +46,10 @@
                 </select>
             </label>
             <label class="form-label">
+                Date de pret:
+                <input type="date" name="datePret" required class="form-input">
+            </label>
+            <label class="form-label">
                 Date de remise prévue:
                 <input type="date" name="dateRemise" required class="form-input">
             </label>
