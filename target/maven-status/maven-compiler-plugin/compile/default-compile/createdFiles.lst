@@ -3,7 +3,6 @@ com/library/model/Abonnement.class
 com/library/service/ProlongementService.class
 com/library/repository/JourFerierRepository.class
 com/library/model/Adherent.class
-css/exemplaire.css
 com/library/repository/ExemplaireRepository.class
 com/library/controller/PretController.class
 com/library/service/ExemplaireService.class
@@ -16,7 +15,6 @@ com/library/model/Reservation.class
 com/library/repository/StatutRepository.class
 com/library/model/PretRendu.class
 com/library/model/Pret.class
-META-INF/persistence.xml
 com/library/repository/EtatReservationRepository.class
 com/library/repository/BibliothecaireRepository.class
 com/library/model/ModePaiment.class
@@ -28,7 +26,6 @@ com/library/repository/ReservationRepository.class
 com/library/model/Cotisation.class
 com/library/controller/ExemplaireController.class
 com/library/controller/ProlongementDecisionController.class
-databases.properties
 com/library/repository/LivreRepository.class
 com/library/repository/AbonnementRepository.class
 com/library/repository/PretPenaliseeRepository.class
@@ -42,7 +39,6 @@ com/library/service/PenaltyService.class
 com/library/model/TypeProfil.class
 com/library/model/Bibliothecaire.class
 com/library/model/Prolongement.class
-css/pexels-pixabay-159711.jpg
 com/library/service/ReservationService.class
 com/library/model/Exemplaire.class
 com/library/model/TypeLecture.class
@@ -50,7 +46,6 @@ com/library/repository/PretRepository.class
 com/library/model/PretPenalisee.class
 com/library/controller/AdherentStatusController.class
 com/library/repository/CotisationRepository.class
-images/pexels-pixabay-159711.jpg
 com/library/controller/ProlongementController.class
 com/library/model/Livre.class
 com/library/service/LivreService.class

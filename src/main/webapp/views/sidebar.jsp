@@ -30,7 +30,7 @@
                 <li><a href="prolongement-list">⏰ Gérer les demandes de prolongement</a></li>
                 <li><a href="adherent-status-update">👥 Mettre à jour les statuts des adhérents</a></li>
                 <li><a href="exemplaire-crud">🛠️ Gérer les exemplaires</a></li>
-                <li><a href="pret-en-cours">📊 Voir les prêts en cours</a></li>
+                <li><a href="pret-list">📊 Voir les prêts en cours</a></li>
                 <li><a href="logout">🚪 Se déconnecter</a></li>
             </ul>
         </c:when>

@@ -250,7 +250,7 @@
             <form action="login" method="post" class="login-form">
                 <label class="form-label">
                     Email:
-                    <input type="email" name="email" required value="jean.durand@email.com" class="form-input">
+                    <input type="email" name="email" required value="marie.dupont@biblio.fr" class="form-input">
                 </label>
                 <label class="form-label">
                     Mot de passe:
