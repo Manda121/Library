@@ -15,7 +15,7 @@
                 <li><a href="reservation">📚 Réserver</a></li>
                 <li><a href="prolongement">⏱️ Prolongement</a></li>
                 <li><a href="adherent-status-update">🔄 Mettre à jour le statut</a></li>
-                <li><a href="mes-reservations">📋 Voir mes réservations</a></li>
+                <li><a href="#">📋 Voir mes réservations</a></li>
                 <li><a href="reabonnement">🔄 Se réabonner</a></li>
                 <li><a href="logout">🚪 Se déconnecter</a></li>
             </ul>

@@ -17,6 +17,7 @@ com/library/model/Reservation.class
 com/library/repository/StatutRepository.class
 com/library/model/PretRendu.class
 com/library/model/Pret.class
+com/library/service/AdherentService.class
 com/library/repository/EtatReservationRepository.class
 com/library/repository/BibliothecaireRepository.class
 com/library/model/ModePaiment.class
@@ -37,6 +38,7 @@ com/library/model/JourFerier.class
 com/library/repository/ProlongementRepository.class
 com/library/service/UserService.class
 com/library/model/Statut.class
+com/library/controller/AdherentRestController.class
 com/library/service/PenaltyService.class
 com/library/model/TypeProfil.class
 com/library/dto/ExemplaireDetailDto.class
@@ -46,6 +48,7 @@ com/library/service/ReservationService.class
 com/library/model/Exemplaire.class
 com/library/model/TypeLecture.class
 com/library/repository/PretRepository.class
+com/library/dto/AdherentDetailDto.class
 com/library/model/PretPenalisee.class
 com/library/controller/AdherentStatusController.class
 com/library/repository/CotisationRepository.class
