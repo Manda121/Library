@@ -15,7 +15,7 @@
                 <li><a href="reservation">📚 Réserver</a></li>
                 <li><a href="prolongement">⏱️ Prolongement</a></li>
                 <li><a href="adherent-status-update">🔄 Mettre à jour le statut</a></li>
-                <li><a href="mes-reservations">📋 Voir mes réservations</a></li>
+                <li><a href="#">📋 Voir mes réservations</a></li>
                 <li><a href="reabonnement">🔄 Se réabonner</a></li>
                 <li><a href="logout">🚪 Se déconnecter</a></li>
             </ul>
@@ -30,7 +30,7 @@
                 <li><a href="prolongement-list">⏰ Gérer les demandes de prolongement</a></li>
                 <li><a href="adherent-status-update">👥 Mettre à jour les statuts des adhérents</a></li>
                 <li><a href="exemplaire-crud">🛠️ Gérer les exemplaires</a></li>
-                <li><a href="pret-list">📊 Voir les prêts en cours</a></li>
+                <li><a href="livres">📊 Voir la liste des livres</a></li>
                 <li><a href="logout">🚪 Se déconnecter</a></li>
             </ul>
         </c:when>

@@ -1,0 +1,72 @@
+package com.library.controller;
+
+import com.library.model.Exemplaire;
+import com.library.model.Livre;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+public class UrlController {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @GetMapping("/exemplaire/{id}")
+    public ResponseEntity<Map<String, Object>> getExemplaireById(@PathVariable("id") int id) {
+        // Fetch exemplaire details
+        Exemplaire exemplaire = entityManager.find(Exemplaire.class, id);
+        
+        if (exemplaire == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        // Create response map
+        Map<String, Object> response = new HashMap<>();
+        response.put("idExemplaire", exemplaire.getIdExemplaire());
+        response.put("nom", exemplaire.getNom());
+        response.put("description", exemplaire.getDescription());
+        response.put("imageCouverture", exemplaire.getImageCouverture());
+        response.put("titre", exemplaire.getTitre());
+        response.put("ageMinimal", exemplaire.getAgeMinimal());
+
+        // Fetch associated livres and their availability
+        Query livreQuery = entityManager.createQuery(
+            "SELECT l FROM Livre l WHERE l.exemplaire.idExemplaire = :idExemplaire"
+        );
+        livreQuery.setParameter("idExemplaire", id);
+        List<Livre> livres = livreQuery.getResultList();
+
+        List<Map<String, Object>> livresData = new ArrayList<>();
+        for (Livre livre : livres) {
+            Map<String, Object> livreData = new HashMap<>();
+            livreData.put("idLivre", livre.getIdLivre());
+            livreData.put("nbPage", livre.getNbPage());
+
+            // Check availability (not in active pret)
+            Query pretQuery = entityManager.createQuery(
+                "SELECT COUNT(p) FROM Pret p"
+            );
+            pretQuery.setParameter("idLivre", livre.getIdLivre());
+            Long activePrets = (Long) pretQuery.getSingleResult();
+            boolean isAvailable = activePrets == 0;
+            livreData.put("isAvailable", isAvailable);
+
+            livresData.add(livreData);
+        }
+
+        response.put("livres", livresData);
+        response.put("nombreLivresDisponibles", livresData.stream().filter(l -> (Boolean) l.get("isAvailable")).count());
+
+        return ResponseEntity.ok(response);
+    }
+}

@@ -1,5 +1,7 @@
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/AdherentRestController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/AdherentStatusController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/ExemplaireController.java
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/ExemplaireRestController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/LivreController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/LoginController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/PenaltyController.java
@@ -9,6 +11,9 @@
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/ProlongementDecisionController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/ReservationController.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/controller/RootController.java
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/dto/AdherentDetailDto.java
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/dto/ExemplaireDetailDto.java
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/dto/LivreDto.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/model/Abonnement.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/model/Adherent.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/model/Bibliothecaire.java
@@ -43,6 +48,7 @@
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/repository/StatutProlongementRepository.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/repository/StatutRepository.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/repository/TypeLectureRepository.java
+/home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/service/AdherentService.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/service/ExemplaireService.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/service/LivreService.java
 /home/mandaniaina/Documents/L2/web/spring/bibliotheque/src/main/java/com/library/service/PenaltyService.java

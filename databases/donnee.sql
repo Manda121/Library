@@ -5,11 +5,11 @@ INSERT INTO bibliothecaire (nom, prenom, tel, email, mot_de_passe) VALUES
 ('Petit', 'Luc', '0654321890', 'luc.petit@biblio.fr', 'mdp'),
 ('Moreau', 'Elodie', '0687654321', 'elodie.moreau@biblio.fr', 'mdp');
 
-INSERT INTO type_profil (nom, nb_livre_max, nb_jour_penalite, description) VALUES
-('Enfant', 5, 3, 'Profil pour les enfants de moins de 12 ans'),
-('Adolescent', 7, 2, 'Profil pour les jeunes de 12 à 18 ans'),
-('Adulte', 10, 1, 'Profil standard pour les adultes'),
-('Senior', 10, 1, 'Profil pour les personnes de plus de 65 ans');
+INSERT INTO type_profil (nom, nb_livre_max, nb_jour_penalite, description, nb_prologement_max) VALUES
+('Enfant', 5, 3, 'Profil pour les enfants de moins de 12 ans', 10),
+('Adolescent', 7, 2, 'Profil pour les jeunes de 12 à 18 ans', 2),
+('Adulte', 10, 1, 'Profil standard pour les adultes', 5),
+('Senior', 10, 1, 'Profil pour les personnes de plus de 65 ans', 3);
 
 INSERT INTO status (nom, description) VALUES
 ('Actif', 'Adhérent actif avec cotisation à jour'),
@@ -125,7 +125,7 @@ INSERT INTO jour_ferier (date_jour_ferier, description) VALUES
 ('2023-11-11', 'Armistice 1918'),
 ('2023-12-25', 'Noël');
 
-INSERT INTO etat_reservation (nom) VALUES
+INSERT INTO etat_reservation (etat) VALUES
 ('en attente'),
 ('acceptee'),
 ('annulee');
@@ -166,12 +166,12 @@ INSERT INTO pret_penalisee (date_remise_penalisee, description, id_pret) VALUES
 ('2023-06-25', 'Retard de 5 jours', 4),
 ('2023-07-15', 'Retard de 5 jours', 5);
 
-INSERT INTO status_prolongement (nom) VALUES
-('accepter'),
-('refuser'),
-('en attente');
+INSERT INTO statut_prolongement (id_statut_prolongement, nom) VALUES
+(1,'accepter'),
+(2,'refuser'),
+(3,'en attente');
 
-INSERT INTO prolongement (id_pret, nb_jour_prolongement, description, id_status_prolongement) VALUES
+INSERT INTO prolongement (id_pret, nb_jour_prolongement, description, id_statut_prolongement) VALUES
 (6, 7, 'Première prolongation', 2),
 (7, 7, 'Première prolongation', 2),
 (8, 7, 'Première prolongation', 2),
