@@ -8,7 +8,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- Vider les tables dépendantes d'abord
 TRUNCATE TABLE pret_rendu;
 TRUNCATE TABLE prolongement;
-TRUNCATE TABLE status_prolongement;
+TRUNCATE TABLE statut_prolongement;
 TRUNCATE TABLE pret_penalisee;
 TRUNCATE TABLE abonnement;
 TRUNCATE TABLE cotisation;
