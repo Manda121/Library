@@ -336,3 +336,10 @@ INSERT INTO pret_rendu (id_pret_rendu, id_pret, date_remise_reel, id_pret_1) VAL
 (8, 8, '2023-10-27', 8),
 (9, 9, '2023-11-17', 9),
 (10, 10, '2023-12-12', 10);
+
+create table historique_status(
+    id_historique int primary key,
+    id_etat_reservation int,
+    date_changement date,
+    id_reservation int,
+);
